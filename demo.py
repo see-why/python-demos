@@ -33,6 +33,17 @@ data = {
 
 sql_Second_Template = 'insert into Test(details, date_created) values(%(details)s, %(date_created)s);'
 
+cursor.execute('select * from test;')
+
+result = cursor.fetchone()
+print('fetchone ' , result)
+
+result2 = cursor.fetchmany(2)
+print('fetchmany ' , result2)
+
+result3 = cursor.fetchall()
+print('fetchall ' , result3) #nothing left for fetch all
+
 cursor.execute(sql_Second_Template,data)
 
 connection.commit()
