@@ -31,12 +31,9 @@ data = {
     'date_created': '2022-05-18 00:20:09.751066'
 }
 
-cursor.execute('''
+sql_Second_Template = 'insert into Test(details, date_created) values(%(details)s, %(date_created)s);'
 
-insert into Test(details, date_created)
-values(%(details)s, %(date_created)s);
-
-''',data)
+cursor.execute(sql_Second_Template,data)
 
 connection.commit()
 connection.close()
