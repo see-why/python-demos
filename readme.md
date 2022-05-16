@@ -12,6 +12,9 @@ This repository includes python files used to interract with a postgreQL databas
 - install psycopg2 binary ``pip install psycopg2-binary``
 - install postgresQL
 - run `python3 demo.py`
+- install flask ``pip install flask``
+- install flask sqlalchemy ``pip install flask-sqlalchemy``
+- run ``FLASK_APP=flash-hello-app.py FLASK_DEBUG=true python3 -m flask run`` or ``FLASK_APP=flash-hello-app.py FLASK_DEBUG=true flask run`` to run hello flask app
 **Important note: create a database and add the name and credentials to psycopg2.connect('dbname=`dbname` password=`password` host=localhost')**
 
 
