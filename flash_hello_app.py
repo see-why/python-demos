@@ -13,6 +13,9 @@ class Person(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(), nullable=False)
 
+    def __repr__(self):
+        return '<Person ID:{self.id} NAME:{self.name} >'
+
 db.create_all()
 
 @app.route('/')
