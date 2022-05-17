@@ -14,7 +14,7 @@ class Person(db.Model):
     name = db.Column(db.String(), nullable=False)
 
     def __repr__(self):
-        return '<Person ID:{self.id} NAME:{self.name} >'
+        return f'<Person ID:{self.id} NAME:{self.name} >'
 
 db.create_all()
 
