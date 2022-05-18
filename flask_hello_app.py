@@ -1,12 +1,14 @@
 from re import S
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://oiyadi:oyinlola@localhost:5432/oiyadi'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 class Person(db.Model):
     __tablename__ = 'persons'
@@ -16,7 +18,7 @@ class Person(db.Model):
     def __repr__(self):
         return f'<Person ID:{self.id} NAME:{self.name} >'
 
-db.create_all()
+# db.create_all()
 
 @app.route('/')
 def index():
